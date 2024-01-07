@@ -1,0 +1,19 @@
+{
+  "name": "verisync-js",
+  "version": "1.0.0",
+  "description": "A simple JS package for verisync synchronizer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/verisync/verisync-js.git"
+  },
+  "author": "Veirsync",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/verisync/verisync-js/issues"
+  },
+  "homepage": "https://github.com/verisync/verisync-js#readme"
+}
