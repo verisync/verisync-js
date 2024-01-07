@@ -15,7 +15,7 @@ class Verisync {
     }
 
     verify() {
-        window.open(`https://app.verisync.co/synchroniser/${this.appId}`, "_blank");
+        window.open(`https://app.verisync.co/synchroniser/${this.appId}`);
     }
 }
 
