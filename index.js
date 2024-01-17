@@ -1,21 +1,28 @@
 class Verisync {
     config;
-    appId;
 
     constructor(config) {
         this.config = config;
-        this.appId = encodeURIComponent(
-            JSON.stringify({
-                redirectUrl: config.redirectUrl,
-                clientId: config.clientId,
-                flowId: config.flowId,
-                meta: config.meta,
-            })
-        );
     }
 
-    verify() {
-        window.location.href = `https://app.verisync.co/synchroniser/${this.appId}`;
+    #constructUrlSearchParams(params) {
+        const urlParams = new URLSearchParams();
+        for (const key in params) {
+            if (params.hasOwnProperty(key)) {
+                urlParams.append(key, params[key]);
+            }
+        }
+        return urlParams.toString();
+    }
+    verify(email) {
+        const params = {
+            redirect_url: this.config.redirect_url,
+            client_id: this.config.client_id,
+            flow_id: this.config.flow_id,
+            email: email,
+        };
+        const urlParams = this.#constructUrlSearchParams(params);
+        window.location.href = `https://app.verisync.co/synchroniser?${urlParams}`;
     }
 }
 
