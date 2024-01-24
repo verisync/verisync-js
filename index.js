@@ -15,7 +15,7 @@ class Verisync {
     }
 
     verify() {
-        window.location.href = `https://app.verisync.co/synchroniser/${this.appId}`;
+        window.location.href = `https://verisync-webapp-git-dev-verisync.vercel.app/synchroniser/${this.appId}`;
     }
 }
 
