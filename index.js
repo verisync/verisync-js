@@ -17,13 +17,13 @@ class Verisync {
 
     verify(email) {
         const params = {
-            redirect_url: this.config.redirect_url,
-            client_id: this.config.client_id,
             flow_id: this.config.flow_id,
+            client_id: this.config.client_id,
             email: email,
+            redirect_url: this.config.redirect_url,
         };
         const urlParams = this.#constructUrlSearchParams(params);
-        window.location.href = `localhost:3000/synchroniser?${urlParams}`;
+        window.location.href = `https://verisync-webapp-git-dev-verisync.vercel.app/synchronizer?${urlParams}`;
     }
 }
 
