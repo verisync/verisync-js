@@ -23,7 +23,7 @@ class Verisync {
             email: email,
         };
         const urlParams = this.#constructUrlSearchParams(params);
-        window.location.href = `https://verisync-webapp-git-dev-verisync.vercel.app/synchroniser?${urlParams}`;
+        window.location.href = `localhost:3000/synchroniser?${urlParams}`;
     }
 }
 
