@@ -19,7 +19,7 @@ class Verisync {
         const params = {
             flow_id: this.config.flow_id,
             client_id: this.config.client_id,
-            email: email,
+            email: email || "",
             redirect_url: this.config.redirect_url,
         };
         const urlParams = this.#constructUrlSearchParams(params);
