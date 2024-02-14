@@ -21,6 +21,10 @@ class Verisync {
             client_id: this.config.client_id,
             email: email || "",
             redirect_url: this.config.redirect_url,
+            metadata: JSON.stringify({
+                email: email || "",
+                ...(this.config.metadata || {})
+            }),
         };
         const urlParams = this.#constructUrlSearchParams(params);
         window.location.href = `https://app.verisync.co/synchronizer?${urlParams}`;
