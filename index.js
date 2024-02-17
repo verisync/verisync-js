@@ -24,7 +24,7 @@ class Verisync {
             metadata: JSON.stringify(this.config.metadata || {}),
         };
         const urlParams = this.#constructUrlSearchParams(params);
-        window.location.href = `https://verisync-webapp-git-develop-verisync.vercel.app/synchronizer?${urlParams}`;
+        window.location.href = `https://app-dev.verisync.co/synchronizer?${urlParams}`;
     }
 }
 
