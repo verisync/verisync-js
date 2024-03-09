@@ -1,16 +1,15 @@
 {
   "name": "verisync-js",
   "version": "1.0.0",
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.esm.js",
+  "types": "dist/types/index.d.ts",
   "description": "A simple JS package for verisync synchronizer",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "/dist"
-  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "publish-lib": "npm run build && npm publish --access public"
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -23,6 +22,24 @@
   },
   "homepage": "https://github.com/verisync/verisync-js#readme",
   "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
+    "release-it": "^17.1.1",
+    "rollup": "^4.12.1",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.2",
     "typescript": "^5.4.2"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": true,
+      "access": "public"
+    },
+    "github": {
+      "release": true
+    }
   }
 }
